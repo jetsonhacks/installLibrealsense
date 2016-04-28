@@ -7,6 +7,8 @@ sudo apt-get install libusb-1.0-0-dev
 ./scripts/install_glfw3.sh
 sudo apt-get install qtcreator -y
 sudo ./scripts/install_qt.sh
+# Install into home directory
+cd ~/
 git clone https://github.com/jetsonhacks/librealsense.git
 cd librealsense
 git checkout jetson
