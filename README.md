@@ -10,7 +10,7 @@ The Jetson Development Kits have a feature used for power saving, called autosus
 
 Also, the Realsense cameras are USB 3.0, which requires that the proper flag be set on a Jetson TK1. For example:
 
-# Jetson TK1: Setup USB port to run USB 3.0; usb_port_owner_info=2 indicates USB 3.0
+<b>Jetson TK1: Setup USB port to run USB 3.0; usb_port_owner_info=2 indicates USB 3.0</b>
 sudo sed -i 's/usb_port_owner_info=0/usb_port_owner_info=2/' /boot/extlinux/extlinux.conf
 
 The Jetson TX1 enables USB 3.0 by default.
