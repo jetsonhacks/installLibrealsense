@@ -1,6 +1,6 @@
 Installs the librealsense library for the Intel Realsense cameras on the NVIDIA Jetson platform.
 
-Installation is broken up into two parts. The shell file 'installLibrealsense.sh' installs dependences for the librealsense library on the Jetson, including libusb-dev and the glfw library, and then clones the librealsense library, patches it for ARM, and then builds the library and installs it.
+Installation is broken up into two parts. The shell file 'installLibrealsense.sh' installs dependences for the librealsense library on the Jetson, including libusb-dev and the glfw library, and then clones the librealsense library, patches it for ARM, and then builds the library and installs it. As a convenience, the script also builds the examples using the LIBUVC backend, which end up in the 'bin' directory.
 
 <b>Note:</b> As of this writing (June 3, 2016) the Jetson TK1 uses v3.1.2 of the glfw, as later versions crash. The version supplied within librealsense currently builds v3.2, which causes issues.
 
