@@ -2,16 +2,18 @@
 # Install the Intel Realsense library librealsense on a Jetson Development Kit
 # Copyright (c) 2016 Jetsonhacks 
 # MIT License
-sudo apt-get update && sudo apt-get upgrade
+# sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install libusb-1.0-0-dev
+# Install glfw3 3.1.2 ; Jetson TK1 currently has issues with later releases
+./install_glfw3.sh
 # Install into home directory
 cd ~/
-git clone https://github.com/jetsonhacks/librealsense.git
+git clone https://github.com/IntelRealSense/librealsense.git
 cd librealsense
-# Install glfw3
-./scripts/install_glfw3.sh
-# Checkout the Jetson branch
-git checkout jetson
+# Checkout version 0.9.2 of librealsense, last tested version
+git checkout v0.9.2
+# Patches the makefile and image.cpp file to exclude SSE on ARM 
+patch -p 1 -i ~/installLibrealsense/arm.patch
 # Copy over the udev rules so that camera can be run from user space
 sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
 sudo cp config/uvc.conf /etc/modprobe.d/

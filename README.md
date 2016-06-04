@@ -1,6 +1,8 @@
 Installs the librealsense library for the Intel Realsense cameras on the NVIDIA Jetson platform.
 
-Installation is broken up into two parts. The shell file 'installLibrealsense.sh' installs dependences for the librealsense library on the Jetson, including libusb-dev and the glfw library, and then builds the library and installs it.
+Installation is broken up into two parts. The shell file 'installLibrealsense.sh' installs dependences for the librealsense library on the Jetson, including libusb-dev and the glfw library, and then clones the librealsense library, patches it for ARM, and then builds the library and installs it.
+
+<b>Note:</b> As of this writing (June 3, 2016) the Jetson TK1 uses v3.1.2 of the glfw, as later versions crash. The version supplied within librealsense currently builds v3.2, which causes issues.
 
 There is also a shell file for installing Qt Creator, which can be used to work with the supplied Qt Creator project files included in the installation.
 
@@ -16,6 +18,6 @@ The Jetson TX1 enables USB 3.0 by default.
 The Realsense R200 is the only camera tested so far on the Jetson.
 
 * May 1, 2016
-As of this writing, a plug/replug is needed before the camera will work
+As of this writing, a plug/replug may be needed before the camera will work
 
 
