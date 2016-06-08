@@ -24,6 +24,19 @@ index 2083611..390be94 100644
  CXXFLAGS += -Wno-switch -Wno-multichar -DRS_USE_$(BACKEND)_BACKEND $(LIBUSB_FLAGS) 
  
  # Add specific include paths for OSX
+diff --git a/librealsense.qtcreator/realsense.pro b/librealsense.qtcreator/realsense.pro
+index 8a16690..2fe7ed5 100644
+--- a/librealsense.qtcreator/realsense.pro
++++ b/librealsense.qtcreator/realsense.pro
+@@ -9,7 +9,7 @@ INCLUDEPATH += ../include
+ CONFIG += link_pkgconfig
+ PKGCONFIG += libusb-1.0
+ LIBS += -pthread
+-QMAKE_CXXFLAGS += -std=c++11 -fPIC -pedantic -mssse3
++QMAKE_CXXFLAGS += -std=c++11 -fPIC -pedantic
+ QMAKE_CXXFLAGS += -Wno-missing-field-initializers -Wno-switch -Wno-multichar
+ QMAKE_CXXFLAGS += -DRS_USE_V4L2_BACKEND
+ 
 diff --git a/src/image.cpp b/src/image.cpp
 index d19d29e..2ee5471 100644
 --- a/src/image.cpp
@@ -87,3 +100,23 @@ index d19d29e..2ee5471 100644
      }
      
      //////////////////////////////////////
+diff --git a/src/uvc-v4l2.cpp b/src/uvc-v4l2.cpp
+index 1cde638..4d69df6 100644
+--- a/src/uvc-v4l2.cpp
++++ b/src/uvc-v4l2.cpp
+@@ -247,15 +247,7 @@ namespace rsimpl
+                         buf.index = i;
+                         if(xioctl(fd, VIDIOC_QBUF, &buf) < 0) throw_error("VIDIOC_QBUF");
+                     }
+-
+                     v4l2_buf_type type = V4L2_BUF_TYPE_VIDEO_CAPTURE;
+-                    for(int i=0; i<10; ++i)
+-                    {
+-                        if(xioctl(fd, VIDIOC_STREAMON, &type) < 0)
+-                        {
+-                            std::this_thread::sleep_for(std::chrono::milliseconds(100));
+-                        }
+-                    }
+                     if(xioctl(fd, VIDIOC_STREAMON, &type) < 0) throw_error("VIDIOC_STREAMON");
+ 
+                     is_capturing = true;
