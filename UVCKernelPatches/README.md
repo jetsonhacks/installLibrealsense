@@ -15,12 +15,10 @@ changes to the kernel are needed).
 Download the kernel source and decompress it into /usr/src
 You can then apply the patches from the /usr/src/kernel directory similar to:
 
- # Switch to /usr/src/kernel
+\# Switch to /usr/src/kernel<br>
+\# Try a dry run first by adding --dry-run flag to the patch command
  
- # Try a dry run first by adding --dry-run flag to the patch command
- 
-patch -p 4 -i \<Patched files\>/patchUVCDriver.diff
-
+patch -p 4 -i \<Patched files\>/patchUVCDriver.diff<br>
 patch -p 4 -i \<Patched files\>/patchUVCInclude.diff
 
 where \<Patched files\> represents the path to where the patches are stored. 
@@ -30,11 +28,13 @@ Note: The folder 'Patched Files' in this directory holds copies of the files
 
 Once the patches are applied, make the kernel and the modules:
 
+<blockquote>
 make prepare
 make modules_prepare
 make -j4
 make modules
 make modules_install
+</blockquote>
 
 You can save the zImage for flashing on the TK1. You can also copy the zImage
 to the boot directory:
