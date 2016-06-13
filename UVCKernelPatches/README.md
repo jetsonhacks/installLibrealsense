@@ -17,7 +17,9 @@ You can then apply the patches from the /usr/src/kernel directory similar to:
 
  # Switch to /usr/src/kernel
  # Try a dry run first by adding --dry-run flag to the patch command
+ 
 patch -p 4 -i <Patched files>/patchUVCDriver.diff
+
 patch -p 4 -i <Patched files>/patchUVCInclude.diff
 
 where <Patched files> represents the path to where the patches are stored. 
