@@ -15,8 +15,8 @@ changes to the kernel are needed).
 Download the kernel source and decompress it into /usr/src
 You can then apply the patches from the /usr/src/kernel directory similar to:
 
-# Switch to /usr/src/kernel
-# Try a dry run first by adding --dry-run flag to the patch command
+ # Switch to /usr/src/kernel
+ # Try a dry run first by adding --dry-run flag to the patch command
 patch -p 4 -i <Patched files>/patchUVCDriver.diff
 patch -p 4 -i <Patched files>/patchUVCInclude.diff
 
