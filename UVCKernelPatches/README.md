@@ -28,15 +28,15 @@ Note: The folder 'Patched Files' in this directory holds copies of the files
 
 Once the patches are applied, make the kernel and the modules:
 
-<blockquote>
-make prepare
-make modules_prepare
-make -j4
-make modules
-make modules_install
-</blockquote>
+<code>
+make prepare<br>
+make modules_prepare<br>
+make -j4<br>
+make modules<br>
+make modules_install<br>
+</code>
 
-You can save the zImage for flashing on the TK1. You can also copy the zImage
+You can save the zImage for flashing on the TK1 from a host computer. You can also copy the zImage
 to the boot directory:
 
 sudo cp arch/arm/boot/zImage /boot/zImage
