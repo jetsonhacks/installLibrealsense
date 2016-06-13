@@ -18,8 +18,8 @@ You can then apply the patches from the /usr/src/kernel directory similar to:
 \# Switch to /usr/src/kernel<br>
 \# Try a dry run first by adding --dry-run flag to the patch command
  
-patch -p 4 -i \<Patched files\>/patchUVCDriver.diff<br>
-patch -p 4 -i \<Patched files\>/patchUVCInclude.diff
+$ patch -p 4 -i \<Patched files\>/patchUVCDriver.diff<br>
+$ patch -p 4 -i \<Patched files\>/patchUVCInclude.diff
 
 where \<Patched files\> represents the path to where the patches are stored. 
 
@@ -39,7 +39,7 @@ make modules_install<br>
 You can save the zImage for flashing on the TK1 from a host computer. You can also copy the zImage
 to the boot directory:
 
-sudo cp arch/arm/boot/zImage /boot/zImage
+$ sudo cp arch/arm/boot/zImage /boot/zImage
 
 which will cause the new kernel to be used on boot. 
 
