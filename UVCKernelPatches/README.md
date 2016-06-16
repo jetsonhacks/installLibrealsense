@@ -18,13 +18,9 @@ There is a convenience script provided for downloading the kernel source (this w
 
 $ ./getKernelSources.sh
 
-There is also a convenience script for compiling the kernel source and modules:
 
-$ ./buildKernel.sh
+<strong>USB Video Class (UVC)</strong>
 
-========================================
-
-USB Video Class (UVC)
 The Realsense libraries adds configuration information to the UVC device driver. This directory contains patches for the stock kernel sources to integrate those changes. 
 
 This document describes creating a UVC module called 'uvcvideo.ko'
@@ -97,7 +93,7 @@ A convenience file is provided to copy the zImage and add the module name to /et
 
 $ ./copyzImage.sh
 
-In the case where the zImage was copied to the boot directory, rebooting the machine
+In the case where the zImage was copied to the boot directory, rebooting the Jetson
 will cause the new kernel and modules to be used.
 
 
