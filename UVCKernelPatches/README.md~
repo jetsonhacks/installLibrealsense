@@ -52,7 +52,11 @@ You can then apply the UVC patches similar to:
 $ patch -p 4 -i \<Patched files\>/patchUVCDriver.diff<br>
 $ patch -p 4 -i \<Patched files\>/patchUVCInclude.diff
 
-where \<Patched files\> represents the path to where the patches are stored, i.e this directory. 
+<<<<<<< HEAD
+where <Patched files> represents the path to where the patches are stored, i.e this directory. 
+=======
+where \<Patched files\> represents the path to where the patches are stored. 
+>>>>>>> 5c67b84b7f24390cd144546a69b419328157d81c
 
 Note: The folder 'Patched Files' in this directory holds copies of the files
 (after patches applied) that are patched in the above process.
@@ -71,13 +75,18 @@ make modules<br>
 make modules_install<br>
 </code>
 
+<<<<<<< HEAD
 Note that a convenience file is provided for the above steps:
 
 $ ./buildKernel.sh
 
-After the build is complete, you can save the zImage for flashing on the TK1 to external media. This image can then be used to flash the Jetson with the new configuration. 
+After the build is complete, you can save the zImage for flashing on the TK1 to an external media. This image can then be used to flash the Jetson with the new configuration. 
 
-You can copy the zImage to the boot directory:
+As an alternative, you can copy the zImage to the Jetson TK1 boot directory:
+=======
+You can save the zImage for flashing on the TK1 from a host computer. You can also copy the zImage
+to the boot directory:
+>>>>>>> 5c67b84b7f24390cd144546a69b419328157d81c
 
 $ sudo cp arch/arm/boot/zImage /boot/zImage
 

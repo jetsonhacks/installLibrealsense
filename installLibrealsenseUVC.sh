@@ -11,7 +11,7 @@ cd ~/
 git clone https://github.com/IntelRealSense/librealsense.git
 cd librealsense
 # Checkout version 0.9.2 of librealsense, last tested version
-git checkout development
+git checkout v0.9.2
 # Patches the makefile and image.cpp file to exclude SSE on ARM 
 patch -p 1 -i ~/installLibrealsense/arm.patch
 # Copy over the udev rules so that camera can be run from user space
