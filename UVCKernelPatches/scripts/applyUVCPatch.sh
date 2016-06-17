@@ -3,8 +3,8 @@
 PATCHDIR=$PWD
 cd /usr/src/kernel
 echo $PATCHDIR
-patch -p 4 --dry-run -i $PATCHDIR/patchUVCDriver.diff
-patch -p 4 --dry-run -i $PATCHDIR/patchUVCInclude.diff
+patch -p 4 -i $PATCHDIR/patchUVCDriver.diff
+patch -p 4 -i $PATCHDIR/patchUVCInclude.diff
 
 
 
