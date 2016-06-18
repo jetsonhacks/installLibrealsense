@@ -1,4 +1,4 @@
-Installs the librealsense library for the Intel Realsense cameras on the NVIDIA Jetson platform.
+Installs the librealsense library for the Intel RealSense cameras on the NVIDIA Jetson platform.
 
 For the Jetson TK1 Development Kit, a Patch is supplied for the Linux kernel which allows 
 V4L2 to work properly. This patch is in the 'UVCKernelPatches' directory. You must rebuild
@@ -18,7 +18,7 @@ There is also a shell file for installing Qt Creator, which can be used to work 
 
 The Jetson Development Kits have a feature used for power saving, called autosuspend, which will power down the USB ports after they have been idle for a while. The script 'disableAutosuspend.sh' will turn that feature off, which is needed for the RealSense camera.
 
-<b>Note:</b> The Jetson TK1 is setup for using USB 2.0. The Realsense cameras are USB 3.0, which requires reconfiguration of the TK1. For example:
+<b>Note:</b> The Jetson TK1 is setup for using USB 2.0. The RealSense cameras are USB 3.0, which requires reconfiguration of the TK1. For example:
 
 <b>Jetson TK1: Setup USB port to run USB 3.0; usb_port_owner_info=2 indicates USB 3.0</b>
 
@@ -26,7 +26,7 @@ sudo sed -i 's/usb_port_owner_info=0/usb_port_owner_info=2/' /boot/extlinux/extl
 
 The Jetson TX1 enables USB 3.0 by default.
 
-The Realsense R200 is the only camera tested so far.
+The RealSense R200 is the only camera tested so far.
 
 
 
