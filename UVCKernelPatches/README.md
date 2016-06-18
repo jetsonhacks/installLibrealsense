@@ -1,5 +1,5 @@
 This directory contains patches for L4T 21.4 on the NVIDIA Jetson TK1 
-to support Intel Realsense cameras. You will need to build a new kernel.
+to support Intel RealSense cameras. You will need to build a new kernel.
 Please read through this document before altering your system.
  
 This document assumes that you know how to build a kernel for the TK1, similar to the instructions at:
@@ -21,7 +21,7 @@ $ ./getKernelSources.sh
 
 <strong>USB Video Class (UVC)</strong>
 
-The Realsense libraries adds configuration information to the UVC device driver. This directory contains patches for the stock kernel sources to integrate those changes. 
+The RealSense libraries adds configuration information to the UVC device driver. This directory contains patches for the stock 3.10 kernel sources to integrate those changes. 
 
 This document describes creating a UVC module called 'uvcvideo.ko'
 
@@ -59,13 +59,13 @@ $ ./applyUVCPatch.sh
 
 Once the patches are applied, make the kernel and the modules:
 
-<code>
-make prepare<br>
-make modules_prepare<br>
-make -j4<br>
-make modules<br>
-make modules_install<br>
-</code>
+<blockquote>
+make prepare <br />
+make modules_prepare <br />
+make -j4  <br />
+make modules <br />
+make modules_install <br />
+</blockquote>
 
 Note that a convenience file is provided for the above steps:
 
