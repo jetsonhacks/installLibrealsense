@@ -12,7 +12,8 @@ git clone https://github.com/IntelRealSense/librealsense.git
 cd librealsense
 # Checkout version 0.9.2 of librealsense, last tested version
 git checkout v0.9.2
-# Patches files to exclude SSE on ARM 
+# git checkout 495d18667aba615a3e19501ce96e28492a71b46e
+# Patches uvc-v4l2.cpp to avoid crash; removes -sse flag from .pro file 
 patch -p 1 -i ~/installLibrealsense/arm.patch
 # Copy over the udev rules so that camera can be run from user space
 sudo cp config/99-realsense-libusb.rules /etc/udev/rules.d/
