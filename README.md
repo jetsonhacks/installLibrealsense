@@ -6,9 +6,9 @@ the kernel on the TK1 for librealsense to work correctly. After the kernel
 is rebuilt, run the 'installLibrealsense.sh' shell file from this directory to install 
 librealsense on the TK1. 
 
-As of this writing (June 7, 2016) The Jetson TX1 implementation has issues. librealsense 
-may be installed with the libuvc backend, which will enable the TX1 to run librealsense. However, a unplug/replug sequence is needed between application program starts, as the camera library goes into an error state after running a program. To install on the Jetson TX1,
-use the 'installLibrealsenseUVC.sh' shell file. 
+For the NVIDIA Jetson TX1 Development Kit, please use the repository:
+
+https://github.com/jetsonhacks/installLibrealsenseTX1
 
 Installation is broken up into two parts. The shell file 'installLibrealsense.sh' installs dependences for the librealsense library on the Jetson, including libusb-dev and the glfw library, and then clones the librealsense library, patches it for ARM, and then builds the library and installs it. As a convenience, the script also builds the examples using the LIBUVC backend, which end up in the 'bin' directory.
 
